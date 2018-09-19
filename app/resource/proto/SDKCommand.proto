@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package sdk;
+// 生成类的包名
+option java_package = "com.sinkinchan.nativesocketdemo.proto";
+//生成的数据访问类的类名，如果没有指定此值，则生成的类名为proto文件名的驼峰命名方法
+option java_outer_classname = "SDKCommandProto";
+
+message SDKCommand{
+
+        enum CommandType {
+             //连接成功
+            CONNECT_SUCCESS = 0;
+            TEST_MESSAGE_RESULT = 1;
+        }
+
+    int32 value=10;
+    CommandType commandType = 1 ;
+
+       enum Status{
+            SUCCESS = 0;
+            FAILED = 1;
+            LOADING = 2;
+       }
+
+
+
+}
